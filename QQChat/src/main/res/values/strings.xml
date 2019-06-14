@@ -1,0 +1,8 @@
+﻿<resources>
+    <string name="app_name">network</string>
+
+    <string name="menu_first">看点</string>
+    <string name="menu_second">联系人</string>
+    <string name="menu_third">发现</string>
+
+</resources>

@@ -1,0 +1,264 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tl_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tab_text_normal"
+        app:navigationIcon="@drawable/ic_back"/>
+
+    <RelativeLayout
+        android:id="@+id/fragment_dynamic_one"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#fff"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:id="@+id/iv_friend"
+            android:src="@drawable/friend"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_friend"
+            android:layout_marginLeft="5dp"
+            android:text="我的动态" />
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divide_line" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/divide_line" />
+    <LinearLayout
+        android:id="@+id/fragment_dynamic_two"
+        android:background="#fff"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/layout_xiangce"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp">
+            <ImageView
+                android:id="@+id/iv_xiangce"
+                android:src="@drawable/xiangce"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_xiangce"
+                android:layout_marginLeft="5dp"
+                android:text="我的相册" />
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CBCED2" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp">
+            <ImageView
+                android:id="@+id/iv_activity"
+                android:src="@drawable/activity"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_activity"
+                android:layout_marginLeft="5dp"
+                android:text="活动" />
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:id="@+id/iv_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CBCED2" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp">
+            <ImageView
+                android:id="@+id/iv_folder"
+                android:src="@drawable/folder"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_folder"
+                android:layout_marginLeft="5dp"
+                android:text="文件助手" />
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CBCED2" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp">
+            <ImageView
+                android:id="@+id/iv_neighbour"
+                android:src="@drawable/neighbour"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_neighbour"
+                android:layout_marginLeft="5dp"
+                android:text="附近的人" />
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divide_line" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/divide_line" />
+    <LinearLayout
+        android:id="@+id/fragment_dynamic_three"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/layout_saoyisao"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp">
+            <ImageView
+                android:id="@+id/iv_saoyisao"
+                android:src="@drawable/saoyisao"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_saoyisao"
+                android:layout_marginLeft="5dp"
+                android:text="拍一拍" />
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CBCED2" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp">
+            <ImageView
+                android:id="@+id/iv_qun"
+                android:src="@drawable/qun"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_qun"
+                android:layout_marginLeft="5dp"
+                android:text="附近的群" />
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:padding="4dp">
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#CC0000"
+            android:textColor="@color/whites"
+            android:text="注销"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</LinearLayout>

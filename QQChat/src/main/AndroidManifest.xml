@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.network">
+
+    <!-- 互联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 查看网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 开关网络状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 查看手机状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 下载时不提示通知栏 -->
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <!-- 拍照 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 录像/录音 -->
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- SD卡 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 安装应用请求，Android8.0需要 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".QQLoginActivity" />
+        <activity
+            android:name=".QQChatActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".QQConcernActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".QQContactActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity android:name=".ChatMainActivity" />
+        <activity
+            android:name=".QQFindActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".QQRegisterActivity"
+            android:theme="@style/AppCompatTheme" />
+
+        <service
+            android:name=".service.AsyncService"
+            android:enabled="true" />
+
+        <!-- 兼容Android7.0，把访问文件的Uri方式改为FileProvider -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.network.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- 接收Socket得到的注册事件 -->
+        <receiver
+            android:name=".QQRegisterActivity$RegisterReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.example.network.REGISTER" />
+            </intent-filter>
+        </receiver>
+        <!-- 接收Socket得到的登录事件 -->
+        <receiver
+            android:name=".QQLoginActivity$LoginReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.example.network.LOGIN" />
+            </intent-filter>
+        </receiver>
+        <!-- 接收Socket得到的收到对方消息事件 -->
+        <receiver
+            android:name=".ChatMainActivity$RecvMsgReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.example.network.RECV_MSG" />
+            </intent-filter>
+        </receiver>
+        <!-- 接收Socket得到的获取好友列表事件 -->
+        <receiver
+            android:name=".QQContactActivity$GetListReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.example.network.GET_LIST" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".QQCameraActivity"></activity>
+    </application>
+
+</manifest>
